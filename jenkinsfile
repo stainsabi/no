@@ -20,6 +20,8 @@
 		stage('build'){
 			steps{
 				bat 'mvn install'
+				bat 'cd target '
+				bat 'java -jar nobroker-1.0-SNAPSHOT.jar '
 			}
 		}
 		
