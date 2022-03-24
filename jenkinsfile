@@ -3,7 +3,7 @@ pipeline{
 	
 	agent any
 	stages{
-    stage('compile'){
+   			 stage('compile'){
 			steps{
 				bat 'mvn compile'
 			}
@@ -22,4 +22,6 @@ pipeline{
 				bat 'mvn install'
 			}
 		}
+	
+}
 }
