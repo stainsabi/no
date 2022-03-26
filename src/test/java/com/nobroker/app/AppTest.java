@@ -26,7 +26,7 @@ public class AppTest
     }
     @Test
     public void search() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Stains Abi\\Desktop\\mavenProject\\chrome\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".\\chrome\\chromedriver.exe");
 		
 		WebDriver driver= new ChromeDriver();
 	    driver.get("https://www.nobroker.in/");
