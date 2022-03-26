@@ -6,15 +6,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args ) throws InterruptedException
     {
+    login Login=new login();
+    filter Filter=new filter();
      Searching search=new Searching();
-     search.search();
+   		Login.logInTest();
+   		Filter.filterTest();
+   		search.search();
+     
     }
 }

@@ -1,8 +1,11 @@
 package com.nobroker.app;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -11,7 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Searching {
-	
+	@Test
 	public void search() {
 		System.setProperty("webdriver.chrome.driver", ".\\chrome\\chromedriver.exe");
 		
@@ -44,8 +47,19 @@ public class Searching {
 	    }
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	    driver.findElement(By.xpath("//button[@class='prop-search-button btn btn-primary btn-lg']")).click();
+	    String place = driver.findElement(By.xpath("//h2[@class='heading-6 flex items-center font-semi-bold m-0']")).getText();
 	    
-		
+	    if(place.contains("Whitefield")) {
+	    	assertTrue( true );
+	    	System.out.println("Test Passed");
+	    }
+	    else {
+	    	assertTrue( false );
+	    	System.out.println("Test Failed");
+	    }
+	    
+	    
+		driver.quit();
 	}
 
 }

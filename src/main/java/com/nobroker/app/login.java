@@ -11,9 +11,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class login {
-	@Test
+
 	public void  logInTest() {
-		System.setProperty("webdriver.chrome.driver", "");
+		System.setProperty("webdriver.chrome.driver", ".//chrome//chromedriver.exe");
 	
 		WebDriver driver= new ChromeDriver();
 	     driver.get("https://www.nobroker.in/");
@@ -33,6 +33,7 @@ public class login {
 	     String message = driver.findElement(By.xpath("//div[@id='alertMessageBox']")).getText();
 	     System.out.println(message);
 	     Assert.assertEquals("Signed in Successfully", message);
+	     driver.quit();
 		
 	}
 
